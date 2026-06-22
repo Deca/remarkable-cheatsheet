@@ -1,0 +1,27 @@
+# Paper Pro with more content per page.
+# Use this when your tool sheets overflow onto a second page and you'd
+# rather see more commands than more pen room.
+#
+# Trade-offs vs paper-pro-default: 10pt body text (smaller but still
+# readable on Carta), 30mm scratch zone (less pen space), same dimensions
+# and gray borders.
+
+preset = "paper-pro-dense"     # self-reference; required by materialize
+
+page_width_mm = 180
+page_height_mm = 240
+body_pt = 10
+scratch_zone_mm = 30
+table_border_pt = 0.4
+table_border_gray = true
+index_depth = 2
+pdf_name = "cheatsheet"
+
+# Preset axis extension (2026-06-19). See IMPLEMENTATION_PLAN.md.
+margin_x_mm = 14
+margin_y_mm = 16
+gotchas_pt = 9                # one point smaller than body — compresses Gotchas
+leading = 0.6                 # tighter — fits more per page, matches the density trade-off
+scratch_label = "Scratch space — annotate exceptions and gotchas you hit live here."
+workflow_glyph = "+"
+gotcha_glyph = "-"

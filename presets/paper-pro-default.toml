@@ -1,0 +1,27 @@
+# Default preset for the reMarkable Paper Pro (11.8" screen, 180x240mm).
+# This is the historical baseline of the pipeline — equivalent to the
+# hardcoded values in `assets/template.typ` before the config layer existed.
+# Pick this if you are unsure.
+#
+# Trade-offs: balanced text size (11pt), comfortable pen area (40mm),
+# gray borders that recede on the page.
+
+preset = "paper-pro-default"   # self-reference; required by materialize
+
+page_width_mm = 180
+page_height_mm = 240
+body_pt = 11
+scratch_zone_mm = 40
+table_border_pt = 0.4
+table_border_gray = true
+index_depth = 2
+pdf_name = "cheatsheet"
+
+# Preset axis extension (2026-06-19). See IMPLEMENTATION_PLAN.md.
+margin_x_mm = 14
+margin_y_mm = 16
+# gotchas_pt omitted — falls through to body_pt (= 11) via cross-key default.
+leading = 0.65
+scratch_label = "Scratch space — annotate exceptions and gotchas you hit live here."
+workflow_glyph = "+"
+gotcha_glyph = "-"

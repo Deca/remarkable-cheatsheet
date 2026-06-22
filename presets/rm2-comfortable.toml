@@ -1,0 +1,27 @@
+# reMarkable 2 (10.3" screen, 157x209mm) tuned for legibility and pen room.
+# The smaller screen + bigger text means less fits per page — accept that
+# as the cost of readable-on-Carta without frontlight.
+#
+# Trade-offs vs paper-pro-default: smaller page, 12pt body (bigger text),
+# 50mm scratch zone (more pen room). Sheets will spill to a second page
+# sooner than on Paper Pro — that's by design.
+
+preset = "rm2-comfortable"     # self-reference; required by materialize
+
+page_width_mm = 157
+page_height_mm = 209
+body_pt = 12
+scratch_zone_mm = 50
+table_border_pt = 0.4
+table_border_gray = true
+index_depth = 2
+pdf_name = "cheatsheet"
+
+# Preset axis extension (2026-06-19). See IMPLEMENTATION_PLAN.md.
+margin_x_mm = 12              # narrower bezel — smaller device, tighter content
+margin_y_mm = 14
+# gotchas_pt omitted — falls through to body_pt (= 12) via cross-key default.
+leading = 0.75                # more generous — easier reading on Carta without frontlight
+scratch_label = "Scratch space — annotate exceptions and gotchas you hit live here."
+workflow_glyph = "+"
+gotcha_glyph = "-"

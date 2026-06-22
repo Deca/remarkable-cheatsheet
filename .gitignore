@@ -1,0 +1,37 @@
+# Build output — regenerate via scripts/build.sh
+output/
+
+# Generated Typst shim — regenerate via scripts/materialize-config.sh
+assets/config.typ
+
+# Internal documentation — design sessions, plans, internal workflow notes.
+# Public-facing project doc lives at the repo root (README.md).
+# The skill spec is at .agents/skills/cheatsheet/SKILL.md, not at the root.
+_documentation/
+
+# User-specific binary paths. Copy .env.example to .env and uncomment as needed.
+.env
+
+# Internal development-only artefact: rich HTML view of the project
+# architecture & functionalities with an in-page annotation + feedback
+# export loop (localStorage-backed) for chatting with the agent during
+# development. The public-facing project doc is just README.md.
+README.html
+output/README-preview.html
+
+# OS / editor junk
+.DS_Store
+.Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Typst build cache
+.typst-cache/
+*.typ.bak
+
+
+.history/
+

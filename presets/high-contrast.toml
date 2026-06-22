@@ -1,0 +1,28 @@
+# High-contrast preset for users who crank the frontlight, read in bright
+# sunlight, or want maximum visual separation between content and structure.
+# Same page size and text size as paper-pro-default; the only change is
+# the borders go pure black instead of gray, and slightly heavier.
+#
+# Trade-offs: the table borders draw more visual weight on the page, which
+# some readers prefer and others find noisy. Try it against the default
+# using `diff-preview` before committing.
+
+preset = "high-contrast"       # self-reference; required by materialize
+
+page_width_mm = 180
+page_height_mm = 240
+body_pt = 11
+scratch_zone_mm = 40
+table_border_pt = 0.8
+table_border_gray = false      # pure black, no gray fill
+index_depth = 2
+pdf_name = "cheatsheet"
+
+# Preset axis extension (2026-06-19). See IMPLEMENTATION_PLAN.md.
+margin_x_mm = 14
+margin_y_mm = 16
+# gotchas_pt omitted — falls through to body_pt (= 11) via cross-key default.
+leading = 0.65
+scratch_label = "Scratch space — annotate exceptions and gotchas you hit live here."
+workflow_glyph = "+"
+gotcha_glyph = "-"

@@ -1,0 +1,81 @@
+# Canonical reference for all cheatsheet config keys.
+# This file is documentation — it is NOT loaded by the build pipeline.
+# Copy this to `cheatsheet.toml` at the project root, then uncomment/edit.
+# Or copy one of the named presets from presets/*.toml instead.
+
+# Which named preset to start from. The preset file is loaded first, then
+# any keys you set below override the preset's values. Set to "" to use
+# these literal values with no preset.
+#
+# Options:
+#   "paper-pro-default"   180x240mm, 11pt, 40mm scratch, gray borders
+#   "paper-pro-dense"     180x240mm, 10pt, 30mm scratch, gray borders
+#   "rm2-comfortable"     157x209mm, 12pt, 50mm scratch, gray borders
+#   "high-contrast"       180x240mm, 11pt, 40mm scratch, black borders
+#
+preset = "paper-pro-default"
+
+# Page dimensions in millimetres. Defaults match the reMarkable Paper Pro.
+# Set to 157, 209 for reMarkable 2 (same 4:3 ratio, smaller screen).
+page_width_mm = 180
+page_height_mm = 240
+
+# Body text size in typographic points. Floor is 10pt — below that, e-ink
+# Carta cannot resolve the anti-aliasing reliably. Default 11pt.
+body_pt = 11
+
+# Vertical space reserved at the bottom of every tool sheet for pen
+# annotations. Never compress below 30mm — see references/design-system.md
+# ("Why a fixed scratch zone, never compressed"). Default 40mm.
+scratch_zone_mm = 40
+
+# Table border stroke width in points. 0.4pt reads cleanly on grayscale
+# Carta without dominating the cell content. Use 0.6–0.8pt for a bolder
+# look (frontlight users, low-vision accessibility).
+table_border_pt = 0.4
+
+# If true (default), table borders and the scratch-zone divider render in
+# gray so they recede visually. If false, borders render in pure black for
+# maximum contrast. The "high-contrast" preset sets this to false.
+table_border_gray = true
+
+# Cover index depth. 1 = only Dev Cheatsheet + sheet titles; 2 = also show
+# intermediate section entries like Core Commands / Workflows / Gotchas.
+index_depth = 2
+
+# Output PDF filename stem. The build writes output/<pdf_name>.pdf.
+# If you include .pdf, the extension is stripped before writing.
+pdf_name = "cheatsheet"
+
+# Page margins in millimetres. Defaults match the historical hardcoded
+# values in `assets/template.typ`. Tighten these on smaller devices
+# (e.g. reMarkable 2) for more usable bezel space.
+margin_x_mm = 14
+margin_y_mm = 16
+
+# Body text size for the Gotchas section in typographic points. Defaults
+# to the same value as `body_pt` via cross-key fall-through — leave
+# blank to inherit. Set explicitly only when Gotchas should be sized
+# differently from Workflows (e.g. paper-pro-dense uses 9pt Gotchas
+# against 10pt body for density).
+gotchas_pt = 11
+
+# Vertical leading in em units (typographic line height). 0.65 is
+# Typst's default — leave at 0.65 unless tuning for a specific device.
+# Smaller values tighten the page; larger values (e.g. 0.75) give more
+# breathing room, helpful on Carta without frontlight.
+leading = 0.65
+
+# Caption rendered above the scratch zone at the bottom of every tool
+# sheet. Set to "" (empty) to hide the label entirely.
+scratch_label = "Scratch space — annotate exceptions and gotchas you hit live here."
+
+# Single-character list marker rendered before each Workflows entry.
+# Default "+". Note: due to Typst markup-mode limitations, this marker
+# also applies to the Gotchas section. See IMPLEMENTATION_PLAN.md.
+workflow_glyph = "+"
+
+# Single-character list marker intended for the Gotchas section.
+# Currently a no-op visually (Typst treats "+" and "-" as the same
+# unordered list type). Reserved for future per-section list styling.
+gotcha_glyph = "-"

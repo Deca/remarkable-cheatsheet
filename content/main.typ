@@ -1,0 +1,6 @@
+#include "index.typ"
+#include "codex.typ"
+#include "git.typ"
+#include "opencode.typ"
+#include "pi-dev.typ"
+#include "zellij.typ"
